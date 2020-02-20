@@ -1,9 +1,9 @@
-import os
-import requests
 import random
+
 
 def remove_slash_ns(input_list):
     return [word.rstrip('\n') for word in input_list]
+
 
 def createLists(peopleListLocation, templateListLocation):
     try:
@@ -21,12 +21,14 @@ def createLists(peopleListLocation, templateListLocation):
     template_list = remove_slash_ns(template_list)
     return people_list, template_list
 
+
 def find_and_replace(person, template):
     '''As of 2/19/20, there is only variable per template. This may change in the future, so I have created a method in order to make it easier to change in the future.'''
     return template.replace("PERSON", person)
 
+
 if __name__ == "__main__":
     people_list, template_list = (
         createLists("people.txt", "template.txt")
-        )
+    )
     print(find_and_replace(random.choice(people_list), random.choice(template_list)))
