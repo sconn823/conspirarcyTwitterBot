@@ -1,4 +1,5 @@
 import random
+from tweet import twitter_bot
 
 
 def remove_slash_ns(input_list):
@@ -30,5 +31,6 @@ def find_and_replace(person, template):
 if __name__ == "__main__":
     people_list, template_list = (
         createLists("people.txt", "template.txt")
-    )
-    print(find_and_replace(random.choice(people_list), random.choice(template_list)))
+        )
+    con_bot = twitter_bot()
+    con_bot.send_tweet(find_and_replace(random.choice(people_list), random.choice(template_list)))
