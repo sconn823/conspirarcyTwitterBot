@@ -108,3 +108,5 @@ __pycache__
 
 #ignore credentials
 config.json
+
+secret_readme.md
